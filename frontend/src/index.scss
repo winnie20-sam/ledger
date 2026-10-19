@@ -1,0 +1,87 @@
+// Global styles: like Angular's src/styles.scss.
+// Only element defaults live here (body, inputs, buttons). Component styles go in
+// each component's own *.module.scss file.
+@use "styles/variables" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $color-text;
+  background: $color-bg;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  line-height: 1.2;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: $space * 0.75;
+}
+
+input {
+  width: 100%;
+  font: inherit;
+  color: inherit;
+  padding: $space * 1.25 $space * 1.5;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: $radius * 0.8;
+  transition: border-color 0.15s, box-shadow 0.15s;
+
+  &:focus {
+    outline: none;
+    border-color: $color-primary;
+    box-shadow: 0 0 0 3px rgba($color-primary, 0.2);
+  }
+
+  // Set by the components when the API returns an error for this field
+  &[aria-invalid="true"] {
+    border-color: $color-danger;
+
+    &:focus {
+      box-shadow: 0 0 0 3px rgba($color-danger, 0.2);
+    }
+  }
+}
+
+button {
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  padding: $space * 1.25 $space * 2;
+  color: #fff;
+  background: $color-primary;
+  border: none;
+  border-radius: $radius * 0.8;
+  transition: background 0.15s;
+
+  &:hover:not(:disabled) {
+    background: $color-primary-hover;
+  }
+
+  &:focus-visible {
+    outline: 3px solid rgba($color-primary, 0.35);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+}

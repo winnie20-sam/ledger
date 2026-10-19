@@ -1,0 +1,62 @@
+// Styles for this component only. Like Angular's component .scss: class names are
+// scoped automatically (.card becomes something like ._card_x7f2a), so they can't clash.
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+// Centres the card on the page
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: $space * 2;
+}
+
+.card {
+  @include card;
+  width: 100%;
+  max-width: 400px;
+}
+
+.header {
+  margin-bottom: $space * 3;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.subtitle {
+  margin: $space 0 0;
+  color: $color-muted;
+}
+
+.field {
+  margin-bottom: $space * 2;
+}
+
+.fieldError {
+  margin: $space * 0.5 0 0;
+  font-size: 14px;
+  color: $color-danger;
+}
+
+// Form-wide error, e.g. "Invalid email or password"
+.alert {
+  margin: 0 0 $space * 2;
+  padding: $space * 1.25 $space * 1.5;
+  font-size: 14px;
+  color: $color-danger;
+  background: $color-danger-bg;
+  border: 1px solid rgba($color-danger, 0.25);
+  border-radius: $radius * 0.8;
+}
+
+.submit {
+  width: 100%;
+  margin-top: $space;
+}
+
+.success {
+  @include card;
+  text-align: center;
+}

@@ -1,0 +1,13 @@
+@use "variables" as *;
+
+// A white rounded panel. Used by the login and register cards.
+@mixin card {
+  background: $color-surface;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  padding: $space * 4;
+
+  @media (max-width: $bp-mobile) {
+    padding: $space * 3;
+  }
+}

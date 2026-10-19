@@ -1,0 +1,21 @@
+// Design tokens shared by every stylesheet.
+// Use in any .scss file:  @use "../../styles/variables" as *;
+
+// Colours
+$color-primary: #0f766e;
+$color-primary-hover: #115e59;
+$color-bg: #f4f6f8;
+$color-surface: #ffffff;
+$color-text: #1f2933;
+$color-muted: #64748b;
+$color-border: #d5dbe3;
+$color-danger: #b42318;
+$color-danger-bg: #fef3f2;
+
+// Shape and spacing
+$radius: 10px;
+$space: 8px; // spacing unit: use multiples, e.g. $space * 2
+$shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 8px 24px rgba(16, 24, 40, 0.08);
+
+// Breakpoints
+$bp-mobile: 480px;
